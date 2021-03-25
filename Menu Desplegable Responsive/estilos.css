@@ -12,6 +12,8 @@ header {
     color: #fff;
     display: flex;
     justify-content: flex-end;
+    align-items: center;
+    padding: 5px;
 }
 
 #menu-bar {
@@ -63,5 +65,38 @@ header label {
         position: absolute;
         top: 50px;
         left: 0;
+        width: 100%;
+        transform: translatex(-100%);
+        transition: all 0.3s;
+    }
+
+    /* Mostar los menus de manera vertical */
+    .menu ul {
+        display: block;
+        background: #555;
+    }
+
+    /* Evitar que los submenus se desplieguen*/
+    .menu ul li:hover ul {
+        display: none;
+        position: static;
+    }
+
+    /* Mostar la flecha cargada a la derecha */
+    .menu a span {
+        position: absolute;
+        right: 5px;
+    }
+
+    #menu-bar:checked ~ .menu {
+        transform: translatex(0%);
+    }
+
+    .menu ul ul {
+        background: rgba(0, 0, 0, 0.4);
+    }
+
+    .menu ul ul a {
+        padding: 15px 40px;
     }
 }
