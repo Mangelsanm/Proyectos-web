@@ -27,6 +27,7 @@ body {
     background: #555;
     width: 100%;
     margin-left: -100%;
+    transition: all 0.5s;
 }
 
 .menu__link {
@@ -35,6 +36,14 @@ body {
     color: #fff;
     font-size: 1.4em;
     text-decoration: none;
+}
+
+.menu__link:hover {
+    background: #444;
+}
+
+.submenu .menu__link:hover {
+    background: #222;
 }
 
 .submenu {
@@ -46,4 +55,38 @@ body {
 .submenu .menu__link {
     background: #333;
     padding-left: 50px;
+}
+
+.mostrar {
+    margin-left: 0;
+}
+
+@media(min-width:1024px) {
+    .nav-bar {
+        display: none;
+    }
+
+    .menu {
+        margin-left: 0;
+        display: flex;
+    }
+    
+    .container-submenu {
+        position: relative;
+    }
+
+    .submenu {
+        position: absolute;
+        overflow: visible;
+        top: 60px;
+        width: 220px;
+        z-index: 1000;
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    .container-submenu:hover .submenu {
+        opacity: 1;
+        visibility: visible;
+    }
 }
